@@ -94,6 +94,6 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-end
 
-config.action_mailer.default_url_options = { host: 'https://pinterest3d-627f1af4181e.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://pinterest3d-627f1af4181e.herokuapp.com/' }
+end
