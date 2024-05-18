@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Pinterest3d</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,6 +12,14 @@
         <li class="nav-item">
           <%= link_to "About Us", home_about_path, class: 'nav-link' %>
         </li>
+        <!-- User login, logout and registration -->
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class: 'nav-link' %></li>
+        <% end %>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
